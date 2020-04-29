@@ -7,4 +7,4 @@ Feature: Search Pokemon
   Scenario: Search "Bulbasaur" on Bulbapedia
     Given User in the bulbapedia homepage
     When User input "Bulbasaur" on input search and press enter
-    Then User get into the "Bulbasaur" article page with number "#025"
+    Then User get into the "Bulbasaur" article page with number "#001"
