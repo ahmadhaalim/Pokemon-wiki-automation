@@ -4,6 +4,8 @@ import demo.webdriver.WebDriverInstance;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BulbaHomePage {
     public void openHomePage(){
@@ -11,7 +13,9 @@ public class BulbaHomePage {
     }
 
     public void insertKeys(String text){
-        WebElement inputSearch = WebDriverInstance.driver.findElement(By.id("searchInput"));
-        inputSearch.sendKeys(text, Keys.ENTER);
+        WebDriverWait wait = new WebDriverWait(WebDriverInstance.driver, 10);
+        WebElement inputSearch = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("searchInput")));
+        //WebElement inputSearch = WebDriverInstance.driver.findElement(By.id("searchInput"));
+        inputSearch.sendKeys(text + Keys.ENTER);
     }
 }

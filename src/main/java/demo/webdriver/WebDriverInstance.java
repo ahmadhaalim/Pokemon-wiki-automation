@@ -18,10 +18,7 @@ public class WebDriverInstance {
         options.setCapability(CapabilityType.PLATFORM_NAME, Platform.WINDOWS);
         options.setCapability(CapabilityType.BROWSER_NAME, BrowserType.CHROME);
         driver = new ChromeDriver(options);
-//        Untuk memaximize window browser pada Mac
-//        driver.manage().window().maximize();
-        //menunggu selama 5 detik, retry berkali2 dalam satu
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     public static void quit(){

@@ -21,11 +21,15 @@ public class SearchPokemonDefinition {
         bulbaHomePage.insertKeys(pokemon);
     }
 
-    @Then("User get into the {string} article page with number {string}")
-    public void userGetIntoTheArticlePage(String pokemon, String number) {
+    @Then("User get into the {string} article page")
+    public void userGetIntoTheArticlePage(String pokemon) {
         String result = resultPage.getTitlePage();
-        String resultnumber = resultPage.getNumber();
         Assert.assertEquals(pokemon,result);
+    }
+
+    @Then("with number {string}")
+    public void withNumber(String number) {
+        String resultnumber = resultPage.getNumber();
         Assert.assertEquals(number,resultnumber);
     }
 }
